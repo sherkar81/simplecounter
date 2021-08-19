@@ -24,33 +24,39 @@
 
         .btn {
             width: 80vw;
-            height: 100px;
+            height: 90px;
             font-size: 32PX;
             font-weight: 900;
         }
 
         .plus {
             background-color: greenyellow;
+            height: 300px;
         }
 
         .minus {
             background-color: red;
+
         }
 
         .container {
+            width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
+        .second {}
     </style>
 </head>
 
 <body bgcolor="#F8D210">
     <div class="container">
+        <button class="btn minus" onclick="decrement()">-</button><br>
         <input id=demoInput type=number min=0 max=108><br>
         <button class="btn plus" onclick="increment()">+</button>
-        <button class="btn minus" onclick="decrement()">-</button>
     </div>
     <script>
         function increment() {

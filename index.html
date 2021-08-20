@@ -74,7 +74,7 @@
             align-items: center;
         }
 
-        @media screen and (max-width: <992px) {
+        @media screen and (max-width: >992px) {
             .container-fluid {
                 display: flex;
                 flex-direction: column;
@@ -112,7 +112,7 @@
     <div class="container-fluid">
         <button class="sideBtn" value="reset" id="clear" onclick="clear()">📛clear</button>
         <input type="number" id="limit" placeholder="Set Limit">
-        <button class="sideBtn" onclick="setValue()">✅ OK</button>
+        <button class="sideBtn" onclick="setValue()">✅ OK</button><br>
     </div>
     <div class="container">
         <button class="btn minus" onclick="decrement()">-</button><br>

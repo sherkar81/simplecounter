@@ -20,6 +20,11 @@
             font-size: 3em;
             font-weight: 900;
             text-align: center;
+            border: 2px solid #F8D210;
+        }
+
+        #demoInput:focus {
+            outline: none;
         }
 
         .btn {
@@ -64,6 +69,10 @@
             font-size: 23px;
             text-align: center;
 
+        }
+
+        #limit:focus {
+            outline: none;
         }
 
         .sideBtn {
@@ -111,6 +120,11 @@
 
             }
 
+            #limit:focus {
+                outline: none;
+            }
+
+
             .sideBtn {
                 width: 60vw;
                 height: 10vh;
@@ -132,7 +146,7 @@
     </div>
     <div class="container">
         <button class="btn minus" onclick="decrement()">-</button><br>
-        <input id=demoInput type=number min=0 max="myMax"><br>
+        <input id="demoInput" type=number min=0 max="myMax"><br>
         <button class="btn plus" onclick="increment()">+</button>
     </div>
 
@@ -151,10 +165,10 @@
 
         let btnClear = document.getElementById('clear');
         let input = document.getElementById('limit');
-        let maininput = document.getElementById('limit');
+        let maininput = document.getElementById('demoInput');
         btnClear.addEventListener('click', () => {
             input.value = '';
-            maininput.value= '';
+            maininput.value = 0;
         });
     </script>
 </body>

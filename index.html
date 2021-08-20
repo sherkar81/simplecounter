@@ -48,16 +48,10 @@
             align-items: center;
         }
 
-        .container-fluid {
-            display: flex;
-            justify-content: center;
-
-        }
-
         #limit {
             background-color: #000;
             color: #fff;
-            width: 14vw;
+            width: 8vw;
             height: 10vh;
             font-size: 23px;
             text-align: center;
@@ -65,61 +59,22 @@
         }
 
         .sideBtn {
-            width: 10vw;
+            width: 8vw;
             height: 10vh;
             font-size: 20px;
-            font-weight: 900;
-            border: 4px solid #F8D210;
-            border-radius: 50%;
-            align-items: center;
-        }
-
-        @media screen and (max-width: >992px) {
-            .container-fluid {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-            }
-
-            #limit {
-                background-color: #000;
-                color: #fff;
-                width: 60vw;
-                height: 10vh;
-                font-size: 23px;
-                text-align: center;
-                border: 4px solid #F8D210;
-                border-radius: 50px;
-
-            }
-
-            .sideBtn {
-                width: 60vw;
-                height: 10vh;
-                font-size: 20px;
-                font-weight: 900;
-                border: 4px solid #F8D210;
-                border-radius: 50px;
-
-            }
         }
     </style>
 </head>
 
 <body bgcolor="#F8D210">
-    <div class="container-fluid">
-        <button class="sideBtn" value="reset" id="clear" onclick="clear()">📛clear</button>
-        <input type="number" id="limit" placeholder="Set Limit">
-        <button class="sideBtn" onclick="setValue()">✅ OK</button><br>
-    </div>
+    <input type="number" id="limit" placeholder="Set Limit">
+    <button class="sideBtn" onclick="setValue()">✅OK</button>
+    <button class="sideBtn" value="reset" id="clear" onclick="clear()">📛clear</button>
     <div class="container">
         <button class="btn minus" onclick="decrement()">-</button><br>
         <input id=demoInput type=number min=0 max="myMax"><br>
         <button class="btn plus" onclick="increment()">+</button>
     </div>
-
     <script>
         function setValue() {
             var input = document.getElementById("demoInput");

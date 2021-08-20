@@ -48,23 +48,63 @@
             align-items: center;
         }
 
-        .second {}
+        .container-fluid {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #limit {
+            background-color: #000;
+            color: #fff;
+            width: 14vw;
+            height: 10vh;
+            font-size: 23px;
+            text-align: center;
+
+        }
+
+        .sideBtn {
+            width: 10vw;
+            height: 10vh;
+            font-size: 20px;
+            font-weight: 900;
+            border: 4px solid #F8D210;
+            border-radius: 50%;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body bgcolor="#F8D210">
+    <div class="container-fluid">
+        <button class="sideBtn" value="reset" id="clear" onclick="clear()">📛clear</button>
+        <input type="number" id="limit" placeholder="Set Limit">
+        <button class="sideBtn" onclick="setValue()">✅ OK</button>
+    </div>
     <div class="container">
         <button class="btn minus" onclick="decrement()">-</button><br>
-        <input id=demoInput type=number min=0 max=108><br>
+        <input id=demoInput type=number min=0 max="myMax"><br>
         <button class="btn plus" onclick="increment()">+</button>
     </div>
     <script>
+        function setValue() {
+            var input = document.getElementById("demoInput");
+            input.setAttribute("max", document.getElementById("limit").value); // set a new 
+        }
+
         function increment() {
             document.getElementById('demoInput').stepUp();
         }
         function decrement() {
             document.getElementById('demoInput').stepDown();
         }
+
+        let btnClear = document.getElementById('clear');
+        let inputs = document.getElementById('limit');
+        btnClear.addEventListener('click', () => {
+            inputs.value = '';
+        });
     </script>
 </body>
 

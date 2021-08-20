@@ -150,9 +150,11 @@
         }
 
         let btnClear = document.getElementById('clear');
-        let inputs = document.getElementById('limit');
+        let input = document.getElementById('limit');
+        let maininput = document.getElementById('limit');
         btnClear.addEventListener('click', () => {
-            inputs.value = '';
+            input.value = '';
+            maininput.value= '';
         });
     </script>
 </body>

@@ -46,7 +46,7 @@
 
         }
 
-        .container {
+        .container1 {
             width: 100vw;
             height: 100vh;
             display: flex;
@@ -87,11 +87,18 @@
 
         @media screen and (max-width: 992px) {
             .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+            }
+
+            .container1 {
                 width: 100vw;
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
+                justify-content: center;
                 align-items: center;
             }
 
@@ -139,15 +146,17 @@
 </head>
 
 <body bgcolor="#F8D210">
-    <div class="container-fluid">
-        <button class="sideBtn" value="reset" id="clear" onclick="clear()">📛clear</button>
-        <input type="number" id="limit" placeholder="Set Limit">
-        <button class="sideBtn" onclick="setValue()">✅ OK</button>
-    </div>
     <div class="container">
-        <button class="btn minus" onclick="decrement()">-</button><br>
-        <input id="demoInput" type=number min=0 max="myMax"><br>
-        <button class="btn plus" onclick="increment()">+</button>
+        <div class="container-fluid">
+            <button class="sideBtn" value="reset" id="clear" onclick="clear()">📛clear</button>
+            <input type="number" id="limit" placeholder="Set Limit">
+            <button class="sideBtn" onclick="setValue()">✅ OK</button>
+        </div>
+        <div class="container1">
+            <button class="btn minus" onclick="decrement()">-</button><br>
+            <input id="demoInput" type=number min=0 max="myMax"><br>
+            <button class="btn plus" onclick="increment()">+</button>
+        </div>
     </div>
 
     <script>

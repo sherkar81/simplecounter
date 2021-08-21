@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#872e4e" media="(prefers-color-scheme: dark)">
-    <meta name="viewport" content="width=device-width>
+    <meta name="viewport" content="width=device-width">
     <title> Mantra Counter App</title>
     <link rel="shortcut icon" href="om.ico" type="image/x-icon">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -16,15 +16,16 @@
         html {
             touch-action: manipulation;
         }
+
         #demoInput {
-            background-color: aqua;
+            background-color: #DBE8D8;
             color: brown;
             height: 100px;
             width: 80vw;
             font-size: 3em;
             font-weight: 900;
             text-align: center;
-            border: 2px solid #F8D210;
+            border: 2px solid #26DFD0;
         }
 
         #demoInput:focus {
@@ -39,14 +40,14 @@
         }
 
         .plus {
-            background-color: greenyellow;
+            background-color: #C8DF52;
             height: 300px;
-            border: 2px solid #F8D210;
+            border: 2px solid #26DFD0;
         }
 
         .minus {
-            background-color: red;
-            border: 2px solid #F8D210;
+            background-color: #FB6B90;
+            border: 2px solid #26DFD0;
 
         }
 
@@ -84,7 +85,7 @@
             height: 10vh;
             font-size: 20px;
             font-weight: 900;
-            border: 4px solid #F8D210;
+            border: 4px solid #26DFD0;
             border-radius: 50%;
             align-items: center;
         }
@@ -131,7 +132,7 @@
                 height: 10vh;
                 font-size: 23px;
                 text-align: center;
-                border: 4px solid #F8D210;
+                border: 4px solid #26DFD0;
                 border-radius: 50px;
 
             }
@@ -146,7 +147,7 @@
                 height: 10vh;
                 font-size: 20px;
                 font-weight: 900;
-                border: 4px solid #F8D210;
+                border: 4px solid #26DFD0;
                 border-radius: 50px;
 
             }
@@ -154,7 +155,7 @@
     </style>
 </head>
 
-<body bgcolor="#F8D210">
+<body bgcolor="#26DFD0">
     <div class="container">
         <div class="container-fluid">
             <button class="sideBtn" value="reset" id="clear" onclick="clear()">📛clear</button>
@@ -184,6 +185,7 @@
                 okSound.play();
                 okSound.currentTime = 0;
             }
+            document.getElementById('demoInput').value = "0";
         }
 
         function increment() {
@@ -191,20 +193,22 @@
             if (document.getElementById('demoInput').value === document.getElementById('limit').value) {
                 errorSound.play();
                 errorSound.currentTime = 0;
-                alert(`Congratulations 🎉 You've completed ${document.getElementById("limit").value} times`);
-
+                setTimeout(() => {
+                    alert(`Congratulations 🎉 You've completed ${document.getElementById("limit").value} times`);
+                }, 700);
             }
             else {
                 keyboardSound.play();
                 keyboardSound.currentTime = 0;
             }
+
         }
         function decrement() {
             document.getElementById('demoInput').stepDown();
             if (document.getElementById('demoInput').value === '0') {
                 errorSound.play();
-                error.currentTime = 0;
-                alert("Value is O");
+                errorSound.currentTime = 0;
+                alert("Value is 0");
             }
             else {
                 keyboardSound.play();

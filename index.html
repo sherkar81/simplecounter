@@ -174,11 +174,13 @@
         let clearSound = new Audio("sounds/clear.mp3");
         let keyboardSound = new Audio("sounds/keyboard.mp3");
         let okSound = new Audio("sounds/ok.wav");
+        let successSound = new Audio("sounds/success.wav");
         function setValue() {
             var input = document.getElementById("demoInput");
             if (document.getElementById("limit").value === "" || document.getElementById("limit").value === "0") {
                 errorSound.play();
                 errorSound.currentTime = 0;
+                window.navigator.vibrate(300);
                 alert("Please enter valid number");
             } else {
                 input.setAttribute("max", document.getElementById("limit").value); // set a new 
@@ -191,8 +193,9 @@
         function increment() {
             document.getElementById('demoInput').stepUp();
             if (document.getElementById('demoInput').value === document.getElementById('limit').value) {
-                errorSound.play();
-                errorSound.currentTime = 0;
+                successSound.play();
+                successSound.currentTime = 0;
+                window.navigator.vibrate(300);
                 setTimeout(() => {
                     alert(`Congratulations 🎉 You've completed ${document.getElementById("limit").value} times`);
                 }, 700);

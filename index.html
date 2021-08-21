@@ -160,30 +160,64 @@
         </div><br><br>
         <div class="container1">
             <button class="btn minus" onclick="decrement()">-</button><br>
-            <input id="demoInput" type=number min=0 max="myMax"><br>
+            <input id="demoInput" type=number value=0 min=0 max="myMax" readonly><br>
             <button class="btn plus" onclick="increment()">+</button>
         </div>
     </div>
 
     <script>
+        let errorSound = new Audio("sounds/error.mp3");
+        let clearSound = new Audio("sounds/clear.mp3");
+        let keyboardSound = new Audio("sounds/keyboard.mp3");
+        let okSound = new Audio("sounds/ok.mp3");
         function setValue() {
             var input = document.getElementById("demoInput");
-            input.setAttribute("max", document.getElementById("limit").value); // set a new 
+            if (document.getElementById("limit").value === "" || document.getElementById("limit").value === "0") {
+                errorSound.play();
+                errorSound.currentTime = 0;
+                alert("Please enter valid number");
+            } else {
+                input.setAttribute("max", document.getElementById("limit").value); // set a new 
+                okSound.play();
+                okSound.currentTime = 0;
+            }
         }
 
         function increment() {
             document.getElementById('demoInput').stepUp();
+            if (document.getElementById('demoInput').value === document.getElementById('limit').value) {
+                errorSound.play();
+                errorSound.currentTime = 0;
+                alert(`Congratulations 🎉 You've completed ${document.getElementById("limit").value} times`);
+
+            }
+            else {
+                keyboardSound.play();
+                keyboardSound.currentTime = 0;
+            }
         }
         function decrement() {
             document.getElementById('demoInput').stepDown();
+            if (document.getElementById('demoInput').value === '0') {
+                errorSound.play();
+                error.currentTime = 0;
+                alert("Value is O");
+            }
+            else {
+                keyboardSound.play();
+                keyboardSound.currentTime = 0;
+            }
         }
 
         let btnClear = document.getElementById('clear');
         let input = document.getElementById('limit');
         let maininput = document.getElementById('demoInput');
+        //let soundPlay = new Audio("tom-1.mp3");
         btnClear.addEventListener('click', () => {
             input.value = '';
             maininput.value = 0;
+            clearSound.play();
+            clearSound.currentTime = 0;
         });
     </script>
 </body>
